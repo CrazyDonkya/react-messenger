@@ -7,6 +7,9 @@ export default defineConfig({
   resolve: {
     mainFields: [],
   },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
 });
 
 
