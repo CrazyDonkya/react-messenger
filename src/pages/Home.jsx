@@ -29,7 +29,6 @@ const Home = () => {
   }, [])
   const selectUser = (user) => {
     setChat(user)
-    console.log(user)
     const user2 = user.uid
     const id = loggedInUser > user2 ? `${loggedInUser + user2}` : `${user2 + loggedInUser}`
     const messagesRef = collection(db, 'messages', id, 'chat')
@@ -42,7 +41,6 @@ const Home = () => {
       setMsgs(msgs)
     })
   }
-  console.log(msgs)
 
   const handleSubmit = async(e) => {
     e.preventDefault()

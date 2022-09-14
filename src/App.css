@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.App{
+    background: #2D2A32;
+}
+
 /*Navbar*/
 
 nav{
@@ -10,8 +14,8 @@ nav{
     justify-content: space-between;
     height: 70px;
     padding: 0px 20px;
-    background-color: #242526;
-    border-bottom: 1px solid #333;
+    background-color: #2D2A32;
+    border-bottom: 1px solid #9B1C3D;
 }
 
 nav a{
@@ -19,11 +23,37 @@ nav a{
     text-decoration: none;
 }
 
+nav h3 a{
+    color: gray;
+    transition: 0.3s ease-in-out all;
+}
+
+nav h3 a:hover{
+    transform: scale(1.05);
+    color: #EF1F4D;
+    border-color: #EF1F4D;
+}
+
 nav div a{
     margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid gray;
+    background-color: #2D2A32;
+    color: gray;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+    font-size: 16px;
+}
+
+nav div a:hover{
+    color: #EF1F4D;
+    border-color: #EF1F4D;
 }
 
 section{
+    background: #2D2A32;
     max-width: 500px;
     margin: 0 auto;
     margin-top: 100px;
@@ -52,30 +82,32 @@ section .form{
     padding: 10px;
     outline: none;
     margin-top: 10px;
-    border: 1px solid #333;
+    border: 1px solid #2D2A32;
     border-radius: 5px;
 }
 
-.btn_container{
-    margin: 10px 0px;
-    text-align: center;
-}
 
 .btn{
     padding: 10px;
     border-radius: 5px;
     outline: none;
     border: 1px solid gray;
-    background-color: #242526;
-    color: white;
+    background-color: #2D2A32;
+    color: gray;
     cursor: pointer;
     transition: 0.3s ease-in-out all;
     font-size: 16px;
 }
 
 .btn:hover{
-    transform: scale(1.05);
+    color: #EF1F4D;
+    border-color: #EF1F4D;
 }
+
+.btn_container {
+    margin: 10px 0px;
+    text-align: center;
+  }
 
 .error{
     text-align: center;
@@ -122,6 +154,7 @@ section .form{
 .home_container{
     position: relative;
     display: grid;
+    background-color: #2D2A32;
     grid-template-columns: 1fr 3fr;
     overflow: hidden;
     height: calc(100vh - 70px);
@@ -130,7 +163,7 @@ section .form{
 
 .users_container{
     margin-top: 10px;
-    border-right: 2px solid #333;
+    border-right: 1px solid #9B1C3D;
     overflow-y: auto;
 }
 
@@ -144,7 +177,12 @@ section .form{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #9B1C3D;
+    transition: 0.1s ease-in-out all;
+}
+
+.user_info:hover{
+    background-color: #313033;
 }
 
 .user_detail{
@@ -186,7 +224,7 @@ section .form{
 
 .messages_user{
     padding: 5px;
-    border-bottom: 2px solid #333;
+    border-bottom: 1px solid #9B1C3D;
     margin-bottom: 5px;
 }
 
@@ -222,7 +260,7 @@ section .form{
 .messages{
     height: calc(100vh - 200px);
     overflow-y: auto;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #9B1C3D;
 }
 
 .message_wrapper{
@@ -254,7 +292,7 @@ section .form{
 }
 
 .me{
-    background-color: darkblue;
+    background-color: darkslategrey;
     color:white; 
 }
 

@@ -21,7 +21,6 @@ const Navbar = () => {
         <h3>
             <Link to='/'>Messenger</Link>
         </h3>
-        <div>
             {user ? (
               <div>
                 <Link to='/profile'>Profile</Link>
@@ -33,7 +32,6 @@ const Navbar = () => {
                 <Link to='/login'>Login</Link>
               </div>
             )}
-        </div>
     </nav>
   )
 }
