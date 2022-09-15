@@ -170,29 +170,27 @@ section .form{
 }
 
 .users_container{
-    margin-top: 10px;
     border-right: 1px solid #9B1C3D;
     overflow-y: auto;
 }
 
 .user_wrapper{
-    margin-bottom: 10px;
     padding: 10px;
     cursor: pointer;
+    border-bottom: 1px solid #9B1C3D;
+    transition: 0.1s ease-in-out all;
+    color: gray;
+}
+
+.user_wrapper:hover{
+    background-color: #313033;
+    color: #EF1F4D;
 }
 
 .user_info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #9B1C3D;
-    transition: 0.1s ease-in-out all;
-    color: gray;
-}
-
-.user_info:hover{
-    background-color: #313033;
-    color: #EF1F4D;
 }
 
 .user_detail{
@@ -233,9 +231,13 @@ section .form{
 }
 
 .messages_user{
-    padding: 5px;
     border-bottom: 1px solid #9B1C3D;
     margin-bottom: 5px;
+}
+
+.messages_user h3{
+    padding: 10px;
+    margin: 0;
 }
 
 .no_chat{
@@ -308,4 +310,54 @@ section .form{
 
 .you{
     background-color: gray;
+}
+
+.selected_user{
+    background-color: #313033;
+}
+
+.last_msg{
+    font-size: 14px;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.last_msg strong{
+    margin-right: 10px;
+}
+
+.unread{
+    margin-left: 10px;
+    background-color:#EF1F4D;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:767px){
+    .home_container{
+        grid-template-columns: 2fr 3fr;
+    }
+    .message_form{
+        left: 3%;
+        right: 0;
+    }
+    .message_wrapper p{
+        max-width:75%;
+    }
+}
+
+@media screen and (max-width:587px){
+    .home_container{
+        grid-template-columns: 1fr 5fr;
+    }
+    .message_form{
+        left: 3%;
+        right: 0;
+    }
+    .message_wrapper p{
+        max-width:75%;
+    }
 }

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {db, auth, storage} from '../firebase'
-import { collection, query, where, onSnapshot, addDoc, Timestamp, orderBy, setDoc, doc } from 'firebase/firestore'
+import { collection, query, where, onSnapshot, addDoc, Timestamp, orderBy, setDoc, doc, getDoc, updateDoc } from 'firebase/firestore'
 import {ref, getDownloadURL, uploadBytes} from 'firebase/storage'
 import User from '../components/User'
 import MessageForm from '../components/MessageForm'
@@ -27,7 +27,7 @@ const Home = () => {
     })
     return () => unsub() 
   }, [])
-  const selectUser = (user) => {
+  const selectUser = async (user) => {
     setChat(user)
     const user2 = user.uid
     const id = loggedInUser > user2 ? `${loggedInUser + user2}` : `${user2 + loggedInUser}`
@@ -40,6 +40,12 @@ const Home = () => {
       })
       setMsgs(msgs)
     })
+    const docSnap = await getDoc(doc(db, 'lastMsg', id))
+    if (docSnap.data().from !== loggedInUser && docSnap.data()) {
+      await updateDoc(doc(db, 'lastMsg', id), {
+        unread:false,
+      })
+    }
   }
 
   const handleSubmit = async(e) => {
@@ -78,7 +84,7 @@ const Home = () => {
   return (
     <div className='home_container'>
       <div className='users_container'>
-        {users.map(user => <User key={user.uid} user={user} selectUser={selectUser} loggedInUser={loggedInUser}/>)}
+        {users.map(user => <User key={user.uid} user={user} selectUser={selectUser} loggedInUser={loggedInUser} chat={chat}/>)}
       </div>
       <div className='messages_container'>
         {chat ? (
