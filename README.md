@@ -1,4 +1,4 @@
-# React Messenger
+**# React Messenger
 
 Мессенджер написанный на языке программирования JavaScript, предназначенный для передачи сообщений и изображений.
 
@@ -21,9 +21,6 @@ To deploy this project run
 
 
 ## Demo
-
-Insert gif or link to demo
-
 
 ```bash
   https://635be74ebc7fe425a64b4492--donkya-react-messenger.netlify.app
@@ -53,3 +50,4 @@ Start the server
 ```bash
   npm run dev 
 ```
+**
