@@ -26,7 +26,7 @@ Insert gif or link to demo
 
 
 ```bash
-  https://635be74ebc7fe425a64b4492--donkya-react-messenger.netlify.app/login
+  https://635be74ebc7fe425a64b4492--donkya-react-messenger.netlify.app
 ```
 ## Run Locally
 
